@@ -27,6 +27,20 @@ public class varias{
 
 
     /**
+    * Devuelve el siguiente primo al número que se pasa como parámetro.
+    *
+    * @param x un número entero
+    * @return el primer primo que es mayor al número que se pasa como parámetro
+    */
+    public static int siguientePrimo(int x) {
+        do {
+            x++;
+        } while (!esPrimo(x));
+        return x;
+    }        
+
+
+    /**
     * Devuelve el número de dígitos que contiene un número entero
     *
     * @param x un número entero
