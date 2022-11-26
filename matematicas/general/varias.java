@@ -19,7 +19,7 @@ public class varias{
     * @return <code>false</code> en caso contrario
     */
     public static boolean esPrimo (int x){
-        for(int i = 2; i<x/2 ;i++){
+        for(int i = 2; i<x ;i++){
             if((x%i)==0){
                 return false;
             }
@@ -59,25 +59,18 @@ public class varias{
 
 
     /**
-    * Devuelve el número de dígitos que contiene un número entero
+    * Devuelve el número que está en una posición de un número entero
     *
-    * @param num un número entero
+    * @param x un número entero
+    * @param n un número entero
     * @return el número que está en esa posición
     */
-    public static int digitoN(int num,int r) {
-        int digitos = 0;
-        int digito = r;
-        int aux = num;
-        while (aux > 0) { //Dígitos del número
-            aux /=10;
-            digitos++;
+    public static int digitoN(int x,int n) {
+        x = (int) volteado(x); //Para contar de izq a der
+        while (n -- >0) {
+            x/=10;
         }
-        if(digitos==r){ //Comprobamos cuando los dígitos sean ogual a la posición deseada
-            digito = num%10;
-        } else{
-            num/=10;
-        }
-        return digito;
+        return (x %10);
     }
 
 
@@ -90,18 +83,14 @@ public class varias{
     */
     public static int posicionDeDigito(int x,int d) {
         int pos = 0;
-
-        x = volteado(x); //Le damos la vuelta para contar y que no nos borre el número al achicarlo
-
+        x = (int) volteado(x); //Le damos la vuelta para contar y que no nos borre el número al achicarlo
         do {
             if (x % 10 == d){ //Si la última posición del número al revés es igual a la que queremos buscar devuelve ese valor
                 return pos;
             }
             x /= 10; //Si no lo achicamos
             pos++; //Y aumentamos la variable que vamos a usar para dar la posición
-
         } while (x > 0); //Haremos esto mientras el número sea mayor a 0, en la última iteración el número se dividiría entre 10 (si no se ecuentra el número igual) y saldrá del bucle, devolviendo -1
-
         return -1;  //Si se acaba el número y no ha salido el número devolverá -1
     }
 
@@ -109,12 +98,12 @@ public class varias{
     /**
     * Voltea un número
     *
-    * @param x un número entero
+    * @param num un número entero
     * @return el número volteado
     */
-    public static int volteado(int x) {
-        int aux = x;
-        int numeroReves = 0;
+    public static long volteado(long num) {
+        long aux = num;
+        long numeroReves = 0;
         while (aux>0) {
             numeroReves = (numeroReves*10)+(aux%10);
             aux/=10;
@@ -152,49 +141,82 @@ public class varias{
 
 
     /**
-    * Le quita a un número n dígitos por detrás (por la derecha).
+    * Le quita a un número, n dígitos por detrás (por la derecha).
     *
     * @param x un número entero
+    * @param d un número entero
     * @return número sin el último número
     */
-    public static int quitaporDetras(int x) {
-        int numero = x/10;
-        return numero;
+    public static long quitaporDetras(long x, int d) {
+        return  x/(long)potencia(10,d);
     }
     
 
     /**
-    * quitaPorDelante: Le quita a un número n dígitos por delante (por la izquierda).
+    * Le quita a un número, n dígitos por delante (por la izquierda).
     *
     * @param num un número entero
+    * @param d un número entero
     * @return la cantidad de dígitos que contiene el número
     */
-    public static double quitaPorDelante(int num) {
-        double numero = num % Math.pow(10,(digitos(num)-1));
-        return numero;
+    public static long quitaPorDelante(long num, int d) {
+        num = volteado(num);
+        num = quitaporDetras(num, d);
+        num = volteado(num);
+        return num;
     }
 
 
     /**
-    * pegaPorDetras: Añade un dígito a un número por detrás.
+    * Añade un dígito a un número por detrás.
     *
     * @param num un número entero
+    * @param x un número entero
     * @return el número con el otro añadido por detrás
     */
-    public static int pegaPorDetras(int num, int x) {
-        int numero = (num*10)+x;
+    public static long pegaPorDetras(long num, int x) {
+        long numero = (num*10)+x;
         return numero;
     }
 
 
     /**
-    * pegaPorDetras: Añade un dígito a un número por detrás.
+    * Añade un dígito a un número por detrás.
     *
     * @param num un número entero
+    * @param x un número entero
     * @return el número con el otro añadido por delante
     */
-    public static double pegaPorDelante(int num, int x) {
-        double numero = (x*Math.pow(10,digitos(num))) + num;
+    public static long pegaPorDelante(long num, int x) {
+        long numero = (long)(x*Math.pow(10,digitos(num))) + num;
+        return numero;
+    }
+
+
+    /**
+    * Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
+    *
+    * @param num un número entero
+    * @param x un número entero
+    * @return el número con el otro añadido por delante
+    */
+    public static long  trozoDeNumero(long num, long x) {
+        long numero = (long) ((long)num*potencia(10, digitos(x)));
+        numero +=x;
+        return numero;
+    }
+
+
+    /**
+    * Pega dos números para formar uno.
+    *
+    * @param num un número entero
+    * @param x un número entero
+    * @return el número con el otro añadido por delante
+    */
+    public static long  juntaNumeros(long num, long x) {
+        long numero = (long) ((long)num*potencia(10, digitos(x)));
+        numero +=x;
         return numero;
     }
 }
