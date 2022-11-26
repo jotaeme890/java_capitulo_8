@@ -17,7 +17,7 @@ public class varias{
     * @return <code>false</code> en caso contrario
     */
     public static boolean esPrimo (int x){
-        for(int i = 2; i<x ;i++){
+        for(int i = 2; i<x/2 ;i++){
             if((x%i)==0){
                 return false;
             }
