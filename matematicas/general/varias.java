@@ -151,4 +151,50 @@ public class varias{
     }
 
 
+    /**
+    * Le quita a un número n dígitos por detrás (por la derecha).
+    *
+    * @param x un número entero
+    * @return número sin el último número
+    */
+    public static int quitaporDetras(int x) {
+        int numero = x/10;
+        return numero;
+    }
+    
+
+    /**
+    * quitaPorDelante: Le quita a un número n dígitos por delante (por la izquierda).
+    *
+    * @param num un número entero
+    * @return la cantidad de dígitos que contiene el número
+    */
+    public static double quitaPorDelante(int num) {
+        double numero = num % Math.pow(10,(digitos(num)-1));
+        return numero;
+    }
+
+
+    /**
+    * pegaPorDetras: Añade un dígito a un número por detrás.
+    *
+    * @param num un número entero
+    * @return el número con el otro añadido por detrás
+    */
+    public static int pegaPorDetras(int num, int x) {
+        int numero = (num*10)+x;
+        return numero;
+    }
+
+
+    /**
+    * pegaPorDetras: Añade un dígito a un número por detrás.
+    *
+    * @param num un número entero
+    * @return el número con el otro añadido por delante
+    */
+    public static double pegaPorDelante(int num, int x) {
+        double numero = (x*Math.pow(10,digitos(num))) + num;
+        return numero;
+    }
 }
