@@ -7,6 +7,8 @@
 package matematicas.general;
 
 public class varias{
+
+
     /**
     * Comprueba si un número entero positivo es primo o no.
     * Un número es primo cuando únicamente es divisible entre
@@ -35,7 +37,7 @@ public class varias{
     public static int siguientePrimo(int x) {
         do {
             x++;
-        } while (!esPrimo(x));
+        } while (!esPrimo(x)); //Usamos la función de primo anteriormente creada para que nos sea más fácil
         return x;
     }        
 
@@ -43,20 +45,64 @@ public class varias{
     /**
     * Devuelve el número de dígitos que contiene un número entero
     *
-    * @param x un número entero
+    * @param num un número entero
     * @return la cantidad de dígitos que contiene el número
     */
-    public static int digitos(int x) {
-        if (x == 0) {
-            return 1;
-        } else {
-            int n = 0;
-            while (x > 0) {
-            x = x / 10;
-            n++;
-            }
-            return n;
+    public static int digitos(long num) {
+        int digitos = 0;
+        while (num > 0) {
+            num /=10;
+            digitos++;
         }
+        return digitos;
+    }
+
+
+    /**
+    * Devuelve el número de dígitos que contiene un número entero
+    *
+    * @param num un número entero
+    * @return el número que está en esa posición
+    */
+    public static int digitoN(int num,int r) {
+        int digitos = 0;
+        int digito = r;
+        int aux = num;
+        while (aux > 0) { //Dígitos del número
+            aux /=10;
+            digitos++;
+        }
+        if(digitos==r){ //Comprobamos cuando los dígitos sean ogual a la posición deseada
+            digito = num%10;
+        } else{
+            num/=10;
+        }
+        return digito;
+    }
+
+
+    /**
+    * Devuelve el número de dígitos que contiene un número entero
+    *
+    * @param num un número entero
+    * @param r un número a buscar en el número pedido anteriormente
+    * @return la primera ocurrencia del número, si no -1
+    */
+    public static int posicionDeDigito(int x,int d) {
+        int pos = 0;
+
+        x = volteado(x); //Le damos la vuelta para contar y que no nos borre el número al achicarlo
+
+        do {
+            if (x % 10 == d){ //Si la última posición del número al revés es igual a la que queremos buscar devuelve ese valor
+                return pos;
+            }
+            x /= 10; //Si no lo achicamos
+            pos++; //Y aumentamos la variable que vamos a usar para dar la posición
+
+        } while (x > 0); //Haremos esto mientras el número sea mayor a 0, en la última iteración el número se dividiría entre 10 (si no se ecuentra el número igual) y saldrá del bucle, devolviendo -1
+
+        return -1;  //Si se acaba el número y no ha salido el número devolverá -1
     }
 
 
@@ -89,6 +135,19 @@ public class varias{
         } else{
             return false;
         }
+    }
+
+
+    /**
+    * Calcula la potencia de un número
+    *
+    * @param x un número entero
+    * @param r la potencia
+    * @return número potenciado al número deseado
+    */
+    public static double potencia(int x, int r) {
+        double potenciado = (Math.pow(x,r));
+        return potenciado;
     }
 
 
