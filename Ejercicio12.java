@@ -1,5 +1,5 @@
 /**
- * 11 pegaPorDetras: Añade un dígito a un número por detrás.
+ * 12 pegaPorDelante: Añade un dígito a un número por delante.
  * 
  * @author jotaeme
  */
