@@ -1,5 +1,5 @@
 /**
- * 8 osicionDeDigito: Da la posición de la primera ocurrencia de un dígitodentro de un número entero. Si no se encuentra, devuelve -1.
+ * 8 PosicionDeDigito: Da la posición de la primera ocurrencia de un dígitodentro de un número entero. Si no se encuentra, devuelve -1.
  * 
  * @author jotaeme
  */
