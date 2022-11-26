@@ -12,8 +12,10 @@ public class Ejercicio9 {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime un número: ");
         int num = sc.nextInt();
+        System.out.print("Dime los dígitos: ");
+        int dig = sc.nextInt();
         
-        System.out.println("El número sin el número de detrás: " + matematicas.general.varias.quitaporDetras(num));
+        System.out.println("El número sin el número de detrás: " + matematicas.general.varias.quitaporDetras(num,dig));
         sc.close();
     }
 }
