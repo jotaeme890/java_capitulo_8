@@ -62,7 +62,7 @@ public class varias{
     * Devuelve el número que está en una posición de un número entero
     *
     * @param x un número entero
-    * @param n un número entero
+    * @param n la posición
     * @return el número que está en esa posición
     */
     public static int digitoN(int x,int n) {
@@ -144,7 +144,7 @@ public class varias{
     * Le quita a un número, n dígitos por detrás (por la derecha).
     *
     * @param x un número entero
-    * @param d un número entero
+    * @param d dífitos que se quitan
     * @return número sin el último número
     */
     public static long quitaporDetras(long x, int d) {
@@ -156,7 +156,7 @@ public class varias{
     * Le quita a un número, n dígitos por delante (por la izquierda).
     *
     * @param num un número entero
-    * @param d un número entero
+    * @param d dífitos que se quitan
     * @return la cantidad de dígitos que contiene el número
     */
     public static long quitaPorDelante(long num, int d) {
@@ -171,7 +171,7 @@ public class varias{
     * Añade un dígito a un número por detrás.
     *
     * @param num un número entero
-    * @param x un número entero
+    * @param x dígito que se añade
     * @return el número con el otro añadido por detrás
     */
     public static long pegaPorDetras(long num, int x) {
@@ -184,38 +184,42 @@ public class varias{
     * Añade un dígito a un número por detrás.
     *
     * @param num un número entero
-    * @param x un número entero
+    * @param x dígito que se añade
     * @return el número con el otro añadido por delante
     */
-    public static long pegaPorDelante(long num, int x) {
-        long numero = (long)(x*Math.pow(10,digitos(num))) + num;
-        return numero;
+    public static long pegaPorDelante(long x, int n) {
+        x = volteado(x);
+        x = (x * 10) + n;
+        x = volteado(x);
+        return x;
     }
 
 
     /**
     * Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
     *
-    * @param num un número entero
     * @param x un número entero
-    * @return el número con el otro añadido por delante
+    * @param n la posición inicial
+    * @param n1 posición final
+    * @return el número modificado
     */
-    public static long  trozoDeNumero(long num, long x) {
-        long numero = (long) ((long)num*potencia(10, digitos(x)));
-        numero +=x;
-        return numero;
+    public static long  trozoDeNumero(long x, int n,int n1) {
+        int longitud = digitos(x);
+        x = quitaPorDelante(x,n);
+        x = quitaporDetras(x, longitud - n1 - 1);
+        return x;
     }
 
 
     /**
     * Pega dos números para formar uno.
     *
-    * @param num un número entero
-    * @param x un número entero
+    * @param num un número entero 1
+    * @param x un número entero 2
     * @return el número con el otro añadido por delante
     */
     public static long  juntaNumeros(long num, long x) {
-        long numero = (long) ((long)num*potencia(10, digitos(x)));
+        long numero = (long)((long)num*potencia(10, digitos(x)));
         numero +=x;
         return numero;
     }
