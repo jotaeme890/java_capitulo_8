@@ -1,5 +1,6 @@
 /**
  * 22 maximoArrayInt: Devuelve el máximo del array que se pasa como parámetro.
+ * 
  * @author jotaeme
  */
 
