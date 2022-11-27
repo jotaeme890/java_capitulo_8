@@ -17,7 +17,7 @@ public class Ejercicio13 {
         System.out.print("Dime la posición final: ");
         int num3 = sc.nextInt();
 
-        System.out.println("El número " + num + " con el añadido sería: " + matematicas.general.varias.trozoDeNumero(num, num2, num3));
+        System.out.println("El número sería: " + matematicas.general.varias.trozoDeNumero(num, num2, num3));
         sc.close();
     }
 }
