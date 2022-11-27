@@ -1,5 +1,7 @@
 /**
  * 23  mediaArrayInt: Devuelve la media del array que se pasa como parámetro.
+ * 
+ * @author jotaeme
  */
 
 import java.util.Scanner;
