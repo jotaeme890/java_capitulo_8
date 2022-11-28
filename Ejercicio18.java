@@ -18,6 +18,5 @@ public class Ejercicio18 {
         System.out.print("El número " + decimal + " en binario es: " + binario2);
 
         sc.close();
-        sc.close();
     }
 }
