@@ -223,4 +223,27 @@ public class varias{
         numero +=x;
         return numero;
     }
+
+    /**
+    * Pasa un decimal a binario
+    *
+    * @param num un número entero
+    * @return el número en binario
+    */
+    public static String aBinario(int num) {
+        String numero = Integer.toBinaryString(num);
+        return numero;
+    }
+
+    /**
+    * Pasa un binario a decimal
+    *
+    * @param num un número entero
+    * @return el número en decimal
+    */
+    public static int aDecimal(String num) {
+        int numero = Integer.parseUnsignedInt(num,2);
+        return numero;
+    }
+
 }
