@@ -224,6 +224,7 @@ public class varias{
         return numero;
     }
 
+    
     /**
     * Pasa un decimal a binario
     *
@@ -234,6 +235,7 @@ public class varias{
         String numero = Integer.toBinaryString(num);
         return numero;
     }
+
 
     /**
     * Pasa un binario a decimal
