@@ -11,11 +11,9 @@ public class Ejercicio18 {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime un número decimal: ");
-        int decimal= sc.nextInt();
-
-        String binario2 = Integer.toBinaryString(decimal);
+        int numero = sc.nextInt();
         
-        System.out.print("El número " + decimal + " en binario es: " + binario2);
+        System.out.print("El número " + numero + " en binario es: " + matematicas.general.varias.aBinario(numero));
 
         sc.close();
     }
