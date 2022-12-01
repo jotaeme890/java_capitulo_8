@@ -8,7 +8,7 @@ package matematicas.general;
 
 public class varias{
 
-        /**
+    /**
     * Dice si un número es capicúo o no
     *
     * @param x un número entero
@@ -21,6 +21,7 @@ public class varias{
             return false;
         }
     }
+
 
     /**
     * Comprueba si un número entero positivo es primo o no.
@@ -54,6 +55,7 @@ public class varias{
         return x;
     }        
 
+
         /**
     * Calcula la potencia de un número
     *
@@ -82,7 +84,8 @@ public class varias{
         return digitos;
     }
 
-        /**
+
+    /**
     * Voltea un número
     *
     * @param num un número entero
@@ -98,6 +101,7 @@ public class varias{
         return numeroReves;
     }
 
+
     /**
     * Devuelve el número que está en una posición de un número entero
     *
@@ -112,6 +116,7 @@ public class varias{
         }
         return (x %10);
     }
+
 
     /**
     * Devuelve el número de dígitos que contiene un número entero
@@ -132,6 +137,7 @@ public class varias{
         } while (x > 0); //Haremos esto mientras el número sea mayor a 0, en la última iteración el número se dividiría entre 10 (si no se ecuentra el número igual) y saldrá del bucle, devolviendo -1
         return -1;  //Si se acaba el número y no ha salido el número devolverá -1
     }
+
 
     /**
     * Le quita a un número, n dígitos por detrás (por la derecha).
