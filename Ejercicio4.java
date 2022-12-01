@@ -15,7 +15,7 @@ public class Ejercicio4 {
         System.out.print("Dime la potencia: ");
         int pot = sc.nextInt();
 
-        System.out.println("El número " + num + " potenciado a " + pot + ", es: " + matematicas.general.varias.potencia(num,pot));
+        System.out.println("El número " + num + " potenciado a " + pot + ", es: " + varias.potencia(num,pot));
         sc.close();
     }
 }

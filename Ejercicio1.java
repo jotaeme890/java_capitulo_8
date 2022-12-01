@@ -13,7 +13,7 @@ public class Ejercicio1 {
         System.out.print("Dime un número: ");
         int num = sc.nextInt();
 
-        if(matematicas.general.varias.esCapicuo(num)){
+        if(varias.esCapicuo(num)){
             System.out.println("Es capicúo");
         } else{
             System.out.println("No es capicúo");

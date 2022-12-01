@@ -15,7 +15,7 @@ public class Ejercicio14 {
         System.out.print("Dime el número a añadir: ");
         int num2 = sc.nextInt();
 
-        System.out.println("El número con el añadido sería: " + matematicas.general.varias.juntaNumeros(num, num2));
+        System.out.println("El número con el añadido sería: " + varias.juntaNumeros(num, num2));
         sc.close();
     }
 }

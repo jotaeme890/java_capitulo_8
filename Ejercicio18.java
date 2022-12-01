@@ -13,7 +13,7 @@ public class Ejercicio18 {
         System.out.print("Dime un número decimal: ");
         int numero = sc.nextInt();
         
-        System.out.print("El número " + numero + " en binario es: " + matematicas.general.varias.aBinario(numero));
+        System.out.print("El número " + numero + " en binario es: " + varias.aBinario(numero));
         sc.close();
     }
 }

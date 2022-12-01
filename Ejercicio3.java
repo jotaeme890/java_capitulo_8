@@ -18,7 +18,7 @@ public class Ejercicio3 {
             System.out.println(num + " no es primo, vamos a buscar al siguiente");
         }
 
-        System.out.println("El siguiente número primo es: "+ matematicas.general.varias.siguientePrimo(num));
+        System.out.println("El siguiente número primo es: "+ varias.siguientePrimo(num));
         sc.close();
     }
 }

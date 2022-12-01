@@ -13,7 +13,7 @@ public class Ejercicio5 {
         System.out.print("Dime un número: ");
         int num = sc.nextInt();
         
-        System.out.println("Tiene "+ matematicas.general.varias.digitos(num) + " dígitos");
+        System.out.println("Tiene "+ varias.digitos(num) + " dígitos");
         sc.close();
     }
 }
