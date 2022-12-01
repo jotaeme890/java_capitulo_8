@@ -15,7 +15,7 @@ public class Ejercicio7 {
         System.out.print("Dime la posición del número que quieres ver: ");
         int pos = sc.nextInt();
         
-        System.out.println("El número que está en esa posición es: "+ varias.digitoN(num,pos));
+        System.out.println("El número que está en esa posición es: "+ matematicas.general.varias.digitoN(num,pos));
         sc.close();
     }
 }

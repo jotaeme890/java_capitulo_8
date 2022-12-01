@@ -15,11 +15,13 @@ public class varias{
     * @return booleano de si es capicúo o no
     */
     public static boolean esCapicuo(int x) {
+        boolean salida ;
         if(volteado(x) == x){
-            return true;
+            salida =  true;
         } else{
-            return false;
+            salida =  false;
         }
+        return salida;
     }
 
 

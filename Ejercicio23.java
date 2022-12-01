@@ -19,7 +19,7 @@ public class Ejercicio23 {
             num [i] = sc.nextDouble();
         }
 
-        System.out.print("La media de ese array es: " + arrays.mediaArrayInt(num));
+        System.out.print("La media de ese array es: " + matematicas.general.arrays.mediaArrayInt(num));
 
         sc.close();
     }

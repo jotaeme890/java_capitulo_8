@@ -19,7 +19,7 @@ public class Ejercicio21 {
             num [i] = sc.nextInt();
         }
 
-        System.out.print("El mínimo de ese array es: " + arrays.minimoArrayInt(num));
+        System.out.print("El mínimo de ese array es: " + matematicas.general.arrays.minimoArrayInt(num));
 
         sc.close();
     }

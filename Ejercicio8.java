@@ -15,7 +15,7 @@ public class Ejercicio8 {
         System.out.print("Dime otro número: ");
         int pos = sc.nextInt();
         
-        System.out.println("El número está en la posición: "+ varias.posicionDeDigito(num,pos));
+        System.out.println("El número está en la posición: "+ matematicas.general.varias.posicionDeDigito(num,pos));
         sc.close();
     }
 }

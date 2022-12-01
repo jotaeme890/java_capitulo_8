@@ -23,7 +23,7 @@ public class Ejercicio25 {
         System.out.print("Dime el número que quieres saber si está en el array o no: ");
         int n2 = sc.nextInt();
 
-        System.out.print("El número " + n2 + " está en la posición: " + arrays.posicionEnArray(num,n2));
+        System.out.print("El número " + n2 + " está en la posición: " + matematicas.general.arrays.posicionEnArray(num,n2));
 
         sc.close();
     }

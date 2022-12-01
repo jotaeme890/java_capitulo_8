@@ -15,7 +15,7 @@ public class Ejercicio11 {
         System.out.print("Dime el número a añadir: ");
         int num2 = sc.nextInt();
 
-        System.out.println("El número " + num + " con el añadido sería: " + varias.pegaPorDetras(num, num2));
+        System.out.println("El número " + num + " con el añadido sería: " + matematicas.general.varias.pegaPorDetras(num, num2));
         sc.close();
     }
 }

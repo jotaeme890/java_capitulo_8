@@ -18,7 +18,7 @@ public class Ejercicio20 {
         System.out.print("Dime el máximo del intervalo: ");
         int max = sc.nextInt();
 
-        int[] num = arrays.generaArrayInt(n, min, max);
+        int[] num = matematicas.general.arrays.generaArrayInt(n, min, max);
 
         for(int i = 0; i<n;i++){
             System.out.print(num[i] + " ");

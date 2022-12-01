@@ -15,7 +15,7 @@ public class Ejercicio9 {
         System.out.print("Dime los dígitos: ");
         int dig = sc.nextInt();
         
-        System.out.println("El número sin el número de detrás: " + varias.quitaporDetras(num,dig));
+        System.out.println("El número sin el número de detrás: " + matematicas.general.varias.quitaporDetras(num,dig));
         sc.close();
     }
 }

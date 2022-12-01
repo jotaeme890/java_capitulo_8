@@ -13,7 +13,7 @@ public class Ejercicio6 {
         System.out.print("Dime un número: ");
         int num = sc.nextInt();
         
-        System.out.println("El número volteado es: "+ varias.volteado(num));
+        System.out.println("El número volteado es: "+ matematicas.general.varias.volteado(num));
         sc.close();
     }
 }
