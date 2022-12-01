@@ -8,7 +8,6 @@ package matematicas.general;
 
 public class varias{
 
-
     /**
     * Comprueba si un número entero positivo es primo o no.
     * Un número es primo cuando únicamente es divisible entre
