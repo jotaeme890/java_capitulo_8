@@ -20,9 +20,7 @@ public class Ejercicio20 {
 
         int[] num = arrays.generaArrayInt(n, min, max);
 
-        for(int i = 0; i<n;i++){
-            System.out.print(num[i] + " ");
-        }
+        arrays.escribeArray(num);
 
         sc.close();
     }
