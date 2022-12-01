@@ -8,6 +8,20 @@ package matematicas.general;
 
 public class varias{
 
+        /**
+    * Dice si un número es capicúo o no
+    *
+    * @param x un número entero
+    * @return booleano de si es capicúo o no
+    */
+    public static boolean esCapicuo(int x) {
+        if(volteado(x) == x){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
     /**
     * Comprueba si un número entero positivo es primo o no.
     * Un número es primo cuando únicamente es divisible entre
@@ -40,6 +54,18 @@ public class varias{
         return x;
     }        
 
+        /**
+    * Calcula la potencia de un número
+    *
+    * @param x un número entero
+    * @param r la potencia
+    * @return número potenciado al número deseado
+    */
+    public static double potencia(int x, int r) {
+        double potenciado = (Math.pow(x,r));
+        return potenciado;
+    }
+
 
     /**
     * Devuelve el número de dígitos que contiene un número entero
@@ -56,6 +82,21 @@ public class varias{
         return digitos;
     }
 
+        /**
+    * Voltea un número
+    *
+    * @param num un número entero
+    * @return el número volteado
+    */
+    public static long volteado(long num) {
+        long aux = num;
+        long numeroReves = 0;
+        while (aux>0) {
+            numeroReves = (numeroReves*10)+(aux%10);
+            aux/=10;
+        }
+        return numeroReves;
+    }
 
     /**
     * Devuelve el número que está en una posición de un número entero
@@ -71,7 +112,6 @@ public class varias{
         }
         return (x %10);
     }
-
 
     /**
     * Devuelve el número de dígitos que contiene un número entero
@@ -92,52 +132,6 @@ public class varias{
         } while (x > 0); //Haremos esto mientras el número sea mayor a 0, en la última iteración el número se dividiría entre 10 (si no se ecuentra el número igual) y saldrá del bucle, devolviendo -1
         return -1;  //Si se acaba el número y no ha salido el número devolverá -1
     }
-
-
-    /**
-    * Voltea un número
-    *
-    * @param num un número entero
-    * @return el número volteado
-    */
-    public static long volteado(long num) {
-        long aux = num;
-        long numeroReves = 0;
-        while (aux>0) {
-            numeroReves = (numeroReves*10)+(aux%10);
-            aux/=10;
-        }
-        return numeroReves;
-    }
-
-
-    /**
-    * Dice si un número es capicúo o no
-    *
-    * @param x un número entero
-    * @return booleano de si es capicúo o no
-    */
-    public static boolean esCapicuo(int x) {
-        if(volteado(x) == x){
-            return true;
-        } else{
-            return false;
-        }
-    }
-
-
-    /**
-    * Calcula la potencia de un número
-    *
-    * @param x un número entero
-    * @param r la potencia
-    * @return número potenciado al número deseado
-    */
-    public static double potencia(int x, int r) {
-        double potenciado = (Math.pow(x,r));
-        return potenciado;
-    }
-
 
     /**
     * Le quita a un número, n dígitos por detrás (por la derecha).
