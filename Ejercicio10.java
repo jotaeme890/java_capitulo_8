@@ -15,7 +15,7 @@ public class Ejercicio10 {
         System.out.print("Dime los dígitos: ");
         int dig = sc.nextInt();
         
-        System.out.println("El número sin el número de delenate sería: " + matematicas.general.varias.quitaPorDelante(num,dig));
+        System.out.println("El número sin el número de delenate sería: " + varias.quitaPorDelante(num,dig));
         sc.close();
     }
 }

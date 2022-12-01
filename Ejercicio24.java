@@ -22,7 +22,7 @@ public class Ejercicio24 {
         System.out.print("Dime el número que quieres saber si está en el array o no: ");
         int n2 = sc.nextInt();
 
-        System.out.print(matematicas.general.arrays.estaEnArrayInt(num,n2));
+        System.out.print(arrays.estaEnArrayInt(num,n2));
 
         sc.close();
     }

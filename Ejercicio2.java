@@ -13,7 +13,7 @@ public class Ejercicio2 {
         System.out.print("Dime un número: ");
         int num = sc.nextInt();
 
-        if(matematicas.general.varias.esPrimo(num)){
+        if(varias.esPrimo(num)){
             System.out.println(num + " es primo");
         } else{
             System.out.println(num + " no es primo");

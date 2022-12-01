@@ -12,7 +12,7 @@ public class Ejercicio3 {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime un número: ");
         int num = sc.nextInt();
-        if(matematicas.general.varias.esPrimo(num)){
+        if(varias.esPrimo(num)){
             System.out.println(num + " es primo, vamos a buscar al siguiente");
         } else{
             System.out.println(num + " no es primo, vamos a buscar al siguiente");
