@@ -18,7 +18,6 @@ public class Ejercicio26 {
             System.out.print("Dime un número para el array: ");
             num [i] = sc.nextInt();
         }
-        ;
 
         arrays.escribeArray(arrays.volteaArrayInt(num));
         sc.close();
