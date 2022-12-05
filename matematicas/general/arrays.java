@@ -116,7 +116,7 @@ public class arrays {
 
 
     /**
-    * Dice si un número está o no dentro de un array.
+    * Dice la posición en la que está un número dentro de un array
     *
     * @param num array de número enteros
     * @param n número a buscar en el array
@@ -134,7 +134,7 @@ public class arrays {
 
 
     /**
-    * Dice si un número está o no dentro de un array.
+    * Voltea un array
     *
     * @param num array de número enteros
     * @return dicho array volteado
