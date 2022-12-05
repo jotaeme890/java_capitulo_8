@@ -282,9 +282,15 @@ public class varias{
     * @param num un número entero
     * @return el número en binario
     */
-    public static String aBinario(int num) {
-        String numero = Integer.toBinaryString(num);
-        return numero;
+    public static int aBinario(int num) {
+        int contador=0;
+        int decimal=0;
+        while(num>0){
+            decimal+=((num%2)*(int)potencia(10, contador));
+            num/=2;
+            contador++;
+        }
+        return decimal;
     }
 
 
@@ -294,9 +300,20 @@ public class varias{
     * @param num un número entero
     * @return el número en decimal
     */
-    public static int aDecimal(String num) {
-        int numero = Integer.parseUnsignedInt(num,2);
-        return numero;
+    public static int aDecimal(int num) {
+        num=(int) volteado(num);
+        int longitud=digitos(num);
+        int potencia=0;
+        int decimal=0;
+        for(int i=1;i<=longitud;i++){
+            decimal=decimal+((num%10)*(int)potencia(2, potencia));
+            potencia++;
+        }
+        return decimal;
+    }
+
+    public static long quitaPorDetras(int octal, int i) {
+        return 0;
     }
 
 }
