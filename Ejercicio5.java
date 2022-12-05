@@ -1,5 +1,5 @@
 /**
- * 6 voltea: Le da la vuelta a un número.
+ * 5 digitos: Devuelve el número de dígitos que contiene un número entero
  * 
  * @author jotaeme
  */
