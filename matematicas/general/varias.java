@@ -14,7 +14,7 @@ public class varias{
     * @param x un número entero
     * @return booleano de si es capicúo o no
     */
-    public static boolean esCapicuo(int x) {
+    public static boolean esCapicuo(long x) {
         boolean salida ;
         if(volteado(x) == x){
             salida =  true;
@@ -22,6 +22,10 @@ public class varias{
             salida =  false;
         }
         return salida;
+    }
+
+    public static boolean esCapicuo(int x) {
+        return esCapicuo((long)x);
     }
 
 
@@ -34,13 +38,23 @@ public class varias{
     * @return <code>true</code> si el número es primo
     * @return <code>false</code> en caso contrario
     */
-    public static boolean esPrimo (int x){
-        for(int i = 2; i<x ;i++){
+    public static boolean esPrimo (long x){
+        if(x<0){
+            x = -x;
+        }
+        if(x<2){
+            return false;
+        }
+        for(int i = 2; i<x/2 ;i++){
             if((x%i)==0){
                 return false;
             }
         }
         return true;
+    }
+
+    public static boolean esPrimo(int x) {
+        return esPrimo((long)x);
     }
 
 
@@ -50,26 +64,37 @@ public class varias{
     * @param x un número entero
     * @return el primer primo que es mayor al número que se pasa como parámetro
     */
-    public static int siguientePrimo(int x) {
+    public static long siguientePrimo(long x) {
         do {
             x++;
-        } while (!esPrimo(x)); //Usamos la función de primo anteriormente creada para que nos sea más fácil
+        } while (!esPrimo(x));
         return x;
-    }        
+    }    
 
+    public static long siguientePrimo(int x) {
+        return siguientePrimo((long)x);
+    }
 
-        /**
+    /**
     * Calcula la potencia de un número
     *
     * @param x un número entero
     * @param r la potencia
     * @return número potenciado al número deseado
     */
-    public static double potencia(int x, int r) {
-        double potenciado = (Math.pow(x,r));
-        return potenciado;
+    public static double potencia(double x,int r) {
+        if(r==0){
+            return 1;
+        }
+        if(r<0){
+            return 1/potencia(x, -r);
+        }
+        double exponente=1;
+        while (r-->0) {
+            exponente*=x;
+        }
+        return exponente;
     }
-
 
     /**
     * Devuelve el número de dígitos que contiene un número entero
@@ -78,12 +103,22 @@ public class varias{
     * @return la cantidad de dígitos que contiene el número
     */
     public static int digitos(long num) {
+        if(num<0){
+            num = -num;
+        }
+        if(num==0){
+            return 1;
+        }
         int digitos = 0;
         while (num > 0) {
             num /=10;
             digitos++;
         }
         return digitos;
+    }
+
+    public static int digitos(int x) {
+        return digitos((long)x);
     }
 
 
@@ -103,31 +138,38 @@ public class varias{
         return numeroReves;
     }
 
+    public static long volteado(int x) {
+        return volteado((long)x);
+    }
+
 
     /**
     * Devuelve el número que está en una posición de un número entero
     *
     * @param x un número entero
-    * @param n la posición
+    * @param pos la posición
     * @return el número que está en esa posición
     */
-    public static int digitoN(int x,int n) {
-        x = (int) volteado(x); //Para contar de izq a der
-        while (n -- >0) {
-            x/=10;
+    public static int digitoN(long x,int pos) {
+        if(pos<0 || pos>=digitos(x)){
+            return -1;
         }
-        return (x %10);
+        return (int)(quitaporDetras(volteado(x), pos))%10; //Le damos la vuelta al número y le quitamos los números anteriores a la posición para después cogerlo y ese sería el dígito de la posición 
+    }
+
+    public static int digitoN(int x,int n) {
+        return digitoN((long)x, n);
     }
 
 
     /**
-    * Devuelve el número de dígitos que contiene un número entero
+    * Da la posición de la primera ocurrencia de un dígitodentro de un número entero, de izquierda a derecha.
     *
     * @param num un número entero
     * @param r un número a buscar en el número pedido anteriormente
     * @return la primera ocurrencia del número, si no -1
     */
-    public static int posicionDeDigito(int x,int d) {
+    public static int posicionDeDigito(long x,int d) {
         int pos = 0;
         x = (int) volteado(x); //Le damos la vuelta para contar y que no nos borre el número al achicarlo
         do {
@@ -140,6 +182,10 @@ public class varias{
         return -1;  //Si se acaba el número y no ha salido el número devolverá -1
     }
 
+    public static int posicionDeDigito(int x,int n) {
+        return posicionDeDigito((long)x, n);
+    }
+
 
     /**
     * Le quita a un número, n dígitos por detrás (por la derecha).
@@ -150,6 +196,10 @@ public class varias{
     */
     public static long quitaporDetras(long x, int d) {
         return  x/(long)potencia(10,d);
+    }
+
+    public static long quitaporDetras(int x, int d) {
+        return  quitaporDetras((long)x, d);
     }
     
 
