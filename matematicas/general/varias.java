@@ -301,13 +301,13 @@ public class varias{
     * @return el número en decimal
     */
     public static int aDecimal(int num) {
-        num=(int) volteado(num);
         int longitud=digitos(num);
-        int potencia=0;
+        int posicion=0;
         int decimal=0;
-        for(int i=1;i<=longitud;i++){
-            decimal=decimal+((num%10)*(int)potencia(2, potencia));
-            potencia++;
+        for(int i=1;i <= longitud;i++){
+            decimal=decimal+((num%10)*(int)potencia(2, posicion));
+            posicion++;
+            num/=10;
         }
         return decimal;
     }
