@@ -312,8 +312,5 @@ public class varias{
         return decimal;
     }
 
-    public static long quitaPorDetras(int octal, int i) {
-        return 0;
-    }
 
 }
