@@ -10,6 +10,28 @@ package matematicas.general;
 public class arrays {
 
     /**
+     * 
+     * @param array array que se quiere imprimir de int
+     */
+    public static void escribeArray(int [] array){
+        for (int i = 0; i < array.length; i++)
+        System.out.print(array[i] + " ");
+        System.out.println();
+    }
+
+    
+    /**
+     * 
+     * @param array array que se quiere imprimir de int
+     */
+    public static void escribeArray(String [] array){
+        for (int i = 0; i < array.length; i++)
+        System.out.print(array[i] + " ");
+        System.out.println();
+    }
+
+
+    /**
     * Genera un array de tamaño n con números aleatorios
     * cuyo intervalo (mínimo y máximo) se indica como parámetro.
     *
@@ -108,6 +130,63 @@ public class arrays {
             }
         }
         return numero;
+    }
+
+
+    /**
+    * Dice si un número está o no dentro de un array.
+    *
+    * @param num array de número enteros
+    * @return dicho array volteado
+    */
+    public static int[] volteaArrayInt(int[] num){
+        int [] a = new int [num.length]; //Creamos sun array auxiliar para meterle los datos modificados
+        for(int i = 0; i<num.length;i++){ 
+            a[num.length-i-1] = num[i]; //A la última posición del array auxiliar le metemos el primer valor del array introducido
+        }
+        return a; //Devolvemos el array auxiliar con la modificación
+    }
+
+
+    /**
+    * Rotamos a la derecha un array
+    *
+    * @param num array de número enteros
+    * @param x posicion a la derecha
+    * @return dicho array rotado
+    */
+    public static int[] rotaDerechaArrayInt(int[] num , int x){
+        int aux=0; //Para guardar la última posición
+        int [] a = num.clone(); //Clonamos lo que hay en el array 
+        while (x-->0) {  //Mientras que la posición sea mayor que 0, es decir va a ir rotando todas las veces que sea
+            aux = a[a.length-1]; //Guardamos en la variable auxiliar el último valor, esto en cada iteración
+            for(int i =a.length-1 ;i>0;i--){ //Vamos de derecha a izquierda en el array
+                a[i] = a[i - 1]; //Rotamos a la derecha
+            }
+            a[0]=aux; //Ponemos en el primer valor del array el valor de auxiliar, así rotandolo hacia la derecha
+        }
+        return a;
+    }
+
+
+    /**
+    * Rotamos a la izquierda un array
+    *
+    * @param num array de número enteros
+    * @param x posicion a la derecha
+    * @return dicho array rotado
+    */
+    public static int[]  rotaIzquierdaArrayInt(int[] num , int x){
+        int aux=0; //Para guardar la última posición
+        int [] a = num.clone(); //Clonamos lo que hay en el array 
+        while (x-->0) {  //Mientras que la posición sea mayor que 0, es decir va a ir rotando todas las veces que sea
+            aux = a[0]; //Guardamos en la variable auxiliar el primer valor, esto en cada iteración
+            for(int i =0;i<a.length-1;i++){ //Vamos de la izquierda a la derecha en el array
+                a[i] = a[i + 1]; //Rotamos a la izquierda
+            }
+            a[a.length-1] =aux;//Ponemos en el último valor el primero del array, así rotandolo hacia la izquierda
+        }
+        return a;
     }
 
 }
