@@ -96,7 +96,7 @@ public class Ejercicio19 {
     
         octal = varias.pegaPorDetras((int)octal, 1);
         octal = varias.volteado((int)octal);
-        octal = varias.quitaPorDetras((int)octal, 1);
+        octal = varias.pegaPorDetras((int)octal, 1);
         octal = varias.quitaPorDelante((int)octal,1);
         
         return octal;
@@ -174,7 +174,7 @@ public class Ejercicio19 {
         }
         binario = varias.pegaPorDetras((int)binario, 1);
         binario = varias.volteado((int)binario);
-        binario = varias.quitaPorDetras((int)binario, 1);
+        binario = varias.pegaPorDetras((int)binario, 1);
         
         return binario;
     }
