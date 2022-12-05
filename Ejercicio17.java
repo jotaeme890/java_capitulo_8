@@ -11,7 +11,7 @@ public class Ejercicio17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime un número binario: ");
-        String binario= sc.next();
+        int binario= sc.nextInt();
         
         System.out.print("El número " + binario + " en decimal es: " + varias.aDecimal(binario));
 
