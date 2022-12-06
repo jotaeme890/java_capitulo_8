@@ -140,7 +140,7 @@ public class arrays {
     * @return dicho array volteado
     */
     public static int[] volteaArrayInt(int[] num){
-        int [] a = new int [num.length]; //Creamos sun array auxiliar para meterle los datos modificados
+        int [] a = new int [num.length]; //Creamos un array auxiliar para meterle los datos modificados
         for(int i = 0; i<num.length;i++){ 
             a[num.length-i-1] = num[i]; //A la última posición del array auxiliar le metemos el primer valor del array introducido
         }
