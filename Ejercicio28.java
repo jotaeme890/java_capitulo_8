@@ -12,14 +12,17 @@ public class Ejercicio28 {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime el tamaño del array: ");
         int n = sc.nextInt();
-        int[] num = new int [n];
+        System.out.print("Dime el mínimo del intervalo: ");
+        int min = sc.nextInt();
+        System.out.print("Dime el máximo del intervalo: ");
+        int max = sc.nextInt();
+
+        int[] num = arrays.generaArrayInt(n, min, max);
+
+        arrays.escribeArray(num);
+
         System.out.print("Dime las veces que lo quieres rotar a la izquierda: ");
         int n2 = sc.nextInt();
-
-        for(int i = 0; i<num.length;i++){
-            System.out.print("Dime un número para el array: ");
-            num [i] = sc.nextInt();
-        }
 
         arrays.escribeArray(arrays.rotaIzquierdaArrayInt(num,n2));
         sc.close();
