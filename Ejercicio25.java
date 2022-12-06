@@ -13,14 +13,16 @@ public class Ejercicio25 {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime el tamaño del array: ");
         int n = sc.nextInt();
-        int[] num = new int [n];
+        System.out.print("Dime el mínimo del intervalo: ");
+        int min = sc.nextInt();
+        System.out.print("Dime el máximo del intervalo: ");
+        int max = sc.nextInt();
 
-        for(int i = 0; i<num.length;i++){
-            System.out.print("Dime un número para el array: ");
-            num [i] = sc.nextInt();
-        }
+        int[] num = arrays.generaArrayInt(n, min, max);
 
-        System.out.print("Dime el número que quieres saber si está en el array o no: ");
+        arrays.escribeArray(num);
+
+        System.out.print("Dime el número que quieres saber su posición: ");
         int n2 = sc.nextInt();
 
         System.out.print("El número " + n2 + " está en la posición: " + arrays.posicionEnArray(num,n2));
