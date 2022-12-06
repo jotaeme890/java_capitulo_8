@@ -120,16 +120,15 @@ public class arrays {
     *
     * @param num array de número enteros
     * @param n número a buscar en el array
-    * @return posición del número
+    * @return posición del número y si no está devuelve -1
     */
     public static int posicionEnArray(int[] num, int n){
-        int numero = 0;
         for(int i = 0; i<num.length;i++){ 
             if(num[i] == n){
-                numero = i; 
+                return i; 
             }
         }
-        return numero;
+        return -1;
     }
 
 
