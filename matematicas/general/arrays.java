@@ -89,7 +89,7 @@ public class arrays {
     * @param num array de número enteros
     * @return media del array
     */
-    public static double mediaArrayInt(double[] num){
+    public static double mediaArrayInt(int[] num){
         int suma = 0;
         for(int i = 0; i<num.length;i++){ 
             suma += num[i];
@@ -120,7 +120,7 @@ public class arrays {
     *
     * @param num array de número enteros
     * @param n número a buscar en el array
-    * @return máximo del array
+    * @return posición del número
     */
     public static int posicionEnArray(int[] num, int n){
         int numero = 0;
@@ -153,7 +153,7 @@ public class arrays {
     *
     * @param num array de número enteros
     * @param x posicion a la derecha
-    * @return dicho array rotado
+    * @return dicho array rotado hacia la derecha 
     */
     public static int[] rotaDerechaArrayInt(int[] num , int x){
         int aux=0; //Para guardar la última posición
@@ -174,7 +174,7 @@ public class arrays {
     *
     * @param num array de número enteros
     * @param x posicion a la derecha
-    * @return dicho array rotado
+    * @return dicho array rotado hacia la izquierda
     */
     public static int[]  rotaIzquierdaArrayInt(int[] num , int x){
         int aux=0; //Para guardar la última posición
