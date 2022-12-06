@@ -12,12 +12,14 @@ public class Ejercicio23 {
         Scanner sc = new Scanner (System.in);
         System.out.print("Dime el tamaño del array: ");
         int n = sc.nextInt();
-        double[] num = new double [n];
+        System.out.print("Dime el mínimo del intervalo: ");
+        int min = sc.nextInt();
+        System.out.print("Dime el máximo del intervalo: ");
+        int max = sc.nextInt();
 
-        for(int i = 0; i<num.length;i++){
-            System.out.print("Dime un número para el array: ");
-            num [i] = sc.nextDouble();
-        }
+        int[] num = arrays.generaArrayInt(n, min, max);
+
+        arrays.escribeArray(num);
 
         System.out.print("La media de ese array es: " + arrays.mediaArrayInt(num));
 
