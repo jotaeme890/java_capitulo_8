@@ -211,6 +211,14 @@ public class varias{
     * @return la cantidad de dígitos que contiene el número
     */
     public static long quitaPorDelante(long num, int d) {
+        if(num%10==0){
+            num=num*10+1;
+            num = volteado(num);
+            num = quitaporDetras(num, d);
+            num = volteado(num);
+            num = quitaporDetras(num, 1);
+            return num;
+        }
         num = volteado(num);
         num = quitaporDetras(num, d);
         num = volteado(num);
