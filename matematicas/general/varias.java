@@ -45,10 +45,12 @@ public class varias{
         if(x<2){
             return false;
         }
-        for(int i = 2; i<x/2 ;i++){
-            if((x%i)==0){
+        int divisor =2;
+        while (divisor<=x/2) {
+            if((x%divisor)==0){
                 return false;
             }
+            divisor++;
         }
         return true;
     }
@@ -212,7 +214,7 @@ public class varias{
     */
     public static long quitaPorDelante(long num, int d) {
         if(num%10==0){
-            num=num*10+1;
+            pegaPorDetras(num, d);
             num = volteado(num);
             num = quitaporDetras(num, d);
             num = volteado(num);
@@ -225,6 +227,10 @@ public class varias{
         return num;
     }
 
+    public static int quitaPorDelante(int num, int d) {
+        return (int)(quitaPorDelante((long)num, d));
+    }
+
 
     /**
     * Añade un dígito a un número por detrás.
@@ -233,8 +239,8 @@ public class varias{
     * @param x dígito que se añade
     * @return el número con el otro añadido por detrás
     */
-    public static long pegaPorDetras(long num, int x) {
-        long numero = (num*10)+x;
+    public static int pegaPorDetras(long num, int x) {
+        int numero = (int)((num*10)+x);
         return numero;
     }
 
@@ -248,7 +254,7 @@ public class varias{
     */
     public static long pegaPorDelante(long x, int n) {
         x = volteado(x);
-        x = (x * 10) + n;
+        x = pegaPorDetras(x, n);
         x = volteado(x);
         return x;
     }
@@ -260,10 +266,13 @@ public class varias{
     * @param x un número entero
     * @param n la posición inicial
     * @param n1 posición final
-    * @return el número modificado
+    * @return el trozo sin signo del número modificado
     */
-    public static long  trozoDeNumero(long x, int n,int n1) {
+    public static long  trozoDeNumero(long x, int n,int n1) {   
         int longitud = digitos(x);
+        if(n<0 || n>n1 || n1>=longitud){
+            return -1;
+        }
         x = quitaPorDelante(x,n);
         x = quitaporDetras(x, longitud - n1 - 1);
         return x;
@@ -278,10 +287,14 @@ public class varias{
     * @return el número con el otro añadido por delante
     */
     public static long  juntaNumeros(long num, long x) {
-        long numero = (long)((long)num*potencia(10, digitos(x)));
-        numero +=x;
+        long numero = (long)((long)num*potencia(10, digitos(x)) + x);
         return numero;
     }
+
+    public static long juntaNumeros(int num, long x) {
+        return (int)(juntaNumeros((long)num, (long)x));
+    }
+
 
     
     /**
