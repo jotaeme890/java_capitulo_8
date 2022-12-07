@@ -305,13 +305,13 @@ public class varias{
     */
     public static int aBinario(int num) {
         int contador=0;
-        int decimal=0;
+        int binario=0;
         while(num>0){
-            decimal+=((num%2)*(int)potencia(10, contador));
+            binario+=((num%2)*(int)potencia(10, contador));
             num/=2;
             contador++;
         }
-        return decimal;
+        return binario;
     }
 
 
