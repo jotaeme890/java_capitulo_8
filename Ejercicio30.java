@@ -18,12 +18,14 @@ public class Ejercicio30 {
         int min = sc.nextInt();
         System.out.print("Dime el máximo del intervalo: ");
         int max = sc.nextInt();
+
+        int[][] num = arrayBi.generaArrayBiInt(n, n2,min, max);
+        arrayBi.escribeArrayBi(num);
+
         System.out.print("Dime la fila que quieres ver: ");
         int fila = sc.nextInt();
 
-        int[][] num = arrayBi.generaArrayBiInt(n, n2,min, max);
-
-        arrayBi.escribeArrayBi(arrayBi.filaDeArrayBiInt(num, fila));
+        arrays.escribeArray(arrayBi.filaDeArrayBiInt(num, fila));
 
         sc.close();
     }
