@@ -5,7 +5,7 @@
  * Desde la función no se debe mostrar nada por pantalla, solo se debe usar print
  * desde el programa principal.
  * 
- * 
+ * @author jotaeme
  */
 
 import java.util.Scanner;
