@@ -1,12 +1,9 @@
 /**
- * 34 diagonal: Devuelve un array que contiene una de las diagonales del array
- * bidimensional que se pasa como parámetro. Se pasan como parámetros
- * fila, columna y dirección. La fila y la columna determinan el número que
- * marcará las dos posibles diagonales dentro del array. La dirección es
- * una cadena de caracteres que puede ser “nose” o “neso”. La cadena
- * “nose” indica que se elige la diagonal que va del noroeste hacia el sureste,
- * mientras que la cadena “neso” indica que se elige la diagonal que va del
- * noreste hacia el suroeste.
+ * 35 Esta función convierte el número n al sistema de palotes y lo devuelve en una
+ * cadena de caracteres. Por ejemplo, el 470213 en decimal es el | | | | - | | | | | |
+ * | - - | | - | - | | | en el sistema de palotes. Utiliza esta función en un programa
+ * para comprobar que funciona bien. Desde la función no se debe mostrar nada
+ * por pantalla, solo se debe usar print desde el programa principal.
  * 
  * @author jotaeme
  */  
