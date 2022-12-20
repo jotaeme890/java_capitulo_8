@@ -1,4 +1,10 @@
-
+/**
+ * 46Realiza un programa que pinte un valle tal como se muestra en los ejemplos. El
+ * usuario debe introducir la altura de la figura. Podemos suponer que el usuario
+ * introduce una altura mayor o igual a 3.
+ * 
+ * @author jotaeme
+ */
 
 
 import java.util.Scanner;
