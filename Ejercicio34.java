@@ -8,7 +8,7 @@
  * mientras que la cadena “neso” indica que se elige la diagonal que va del
  * noreste hacia el suroeste.
  * 
- * @author jotaeme
+ *  
  */
 
 import java.util.Scanner;
@@ -24,14 +24,8 @@ public class Ejercicio34 {
 
         int[][] num = arrayBi.generaArrayBiInt(5, 5,min, max);
 
-        System.out.print("Fila: ");
-        int fila = sc.nextInt();
-        System.out.print("Columna: ");
-        int columna = sc.nextInt();
-        System.out.print("Dirección: ");
-        String direccion = sc.next();
-        System.out.print("Diagonal: ");
-        arrays.escribeArray(arrayBi.diagonal(num, fila, columna, direccion));
+        arrays.escribeArray(arrayBi.diagonal(num, 2, 2, "neso"));
+        arrays.escribeArray(arrayBi.diagonal(num, 2, 2, "nose"));
         sc.close();
     }
 }
