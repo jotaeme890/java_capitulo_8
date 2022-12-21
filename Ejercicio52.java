@@ -25,6 +25,6 @@ public class Ejercicio52 {
     }
 
     public static int aleatorioDeArray(int[] a){
-        return a[(int)Math.random()*a.length];
+        return a[(int)(Math.random()*(a.length+1))];
     } 
 }
