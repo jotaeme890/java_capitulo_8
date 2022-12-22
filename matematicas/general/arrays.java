@@ -188,4 +188,86 @@ public class arrays {
         return a;
     }
 
+    /**
+     * Devuelve un array con todos los
+     * números primos que se encuentren
+     * en otro array que se pasa como
+     * parámetro.
+     * Obviamente el tamaño del array
+     * que se devuelve será menor o
+     * igual al que se pasa como
+     * parámetro.
+     *
+     *  @param x el array del que se quiere saber los primos
+     * @return array con primos
+     */
+    public static int[] filtraPrimos(int x[]){
+        int[] primos = new int[x.length];
+        int cuentaPrimos = 0;
+        for (int numero : x) {
+            if (varias.esPrimo(numero)) {
+                primos[cuentaPrimos++] = numero;
+            }
+        }
+        int[] array = new int[cuentaPrimos];
+        for (int i = 0; i < cuentaPrimos; i++) {
+            array[i] = primos[i];
+        }
+        return array;
+    }
+
+
+    /**
+     * Devuelve un array con todos los números
+     * capicúa que se encuentren en otro array
+     * que se pasa como parámetro.
+     * Obviamente el tamaño del array que se
+     * devuelve será menor o igual al que se
+     * pasa como parámetro.
+     *
+     *  @param x el array del que se quiere saber los capicuos
+     * @return array con capicuos
+     */
+    public static int[] filtraCapicuas(int x[]){
+        int[] capicuo = new int[x.length];
+        int capicuos = 0;
+        for (int numero : x) {
+            if (varias.esCapicuo(numero)) {
+                capicuo[capicuos++] = numero;
+            }
+        }
+        int[] array = new int[capicuos];
+        for (int i = 0; i < capicuos; i++) {
+            array[i] = capicuo[i];
+        }
+        return array;
+    }
+
+
+    /**
+     * Devuelve un array con todos los números
+     * que contienen el 7 (por ej. 7, 27, 782)
+     * que se encuentren en otro array que se
+     * pasa como parámetro. El tamaño del array
+     * que se devuelve será menor o igual al
+     * que se pasa como parámetro
+     * 
+     *  @param x el array para saber sus números 
+     * @return array con números con 7
+     */
+    public static int[] filtraCon7(int x[]){
+        int[] consiete = new int[x.length];
+        int numeros = 0;
+        for (int i = 0; i < x.length; i++) {
+            if(varias.posicionDeDigito(x[i], 7) != -1){ //Ya que si no está dentro, devuelve -1
+                consiete[numeros++] = x[i];
+            }
+        }
+        int [] array = new int [numeros];
+        for (int i = 0; i < numeros; i++) {
+            array[i] = consiete[i];
+        }
+        return array;
+    }
 }
+
