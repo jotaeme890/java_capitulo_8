@@ -165,7 +165,7 @@ public class varias{
 
 
     /**
-    * Da la posición de la primera ocurrencia de un dígitodentro de un número entero, de izquierda a derecha.
+    * Da la posición de la primera ocurrencia de un dígito dentro de un número entero, de izquierda a derecha.
     *
     * @param num un número entero
     * @param r un número a buscar en el número pedido anteriormente
@@ -333,5 +333,53 @@ public class varias{
         return decimal;
     }
 
+
+    /**
+     * 
+     * @param n un número para pasarlo a palote
+     * @return
+     */
+    public static String convierteEnPalotes(int n){
+        String palo = "";
+        for (int i = 0; i < digitos(n); i++) {
+            for (int j = 0; j < digitoN(n,i); j++) {
+                palo += "|";
+            }
+            if (i < digitos(n) - 1) {
+                palo += "-";
+            }
+        }
+        return palo;
+    }
+
+
+    /**
+     * 
+     * @param n un número para pasarlo a morse
+     * @return
+     */
+    public static String convierteEnMorse (int n){
+        String[] morse = {"_ _ _ _ _", ". _ _ _ _", ". . _ _ _", ". . . _ _", ". . . . _",". . . . .", "_ . . . .", "_ _ . . .", "_ _ _ . .", "_ _ _ _ ."};
+        String morse1 = "";
+        for(int i = 0; i < digitos(n); i++) {
+            morse1 += morse[digitoN(n, i)]; //Ponemos que vaya a la posición del dígito en el que está, es decir si sale el 5, irá a la posición 5 del array con el morse
+        }
+        return morse1;
+    }
+
+
+    /**
+     * 
+     * @param n un número para pasarlo a palabras
+     * @return
+     */
+    public static String convierteEnPalabras(int n){
+        String[] palabra = {"cero", "uno", "dos", "tres", "cuatro","cinco", "seis", "siete", "ocho", "nueve"};
+        String palabras = "";
+        for(int i = 0; i < digitos(n); i++) {
+            palabras += palabra[digitoN(n, i)] + ", "; //Ponemos que vaya a la posición del dígito en el que está, es decir si sale el 5, irá a la posición 5 del array con el morse
+        }
+        return palabras;
+    }
 
 }
